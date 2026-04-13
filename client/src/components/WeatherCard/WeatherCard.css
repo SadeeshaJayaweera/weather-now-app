@@ -1,5 +1,5 @@
 .weather-card {
-  background: linear-gradient(135deg, #3f51b5 0%, #2196f3 100%), url('/src/assets/images/bg-today-large.svg');
+  background: linear-gradient(135deg, #3f51b5 0%, #2196f3 100%), url('/assets/images/bg-today-large.svg');
   background-size: cover;
   background-blend-mode: overlay;
   border-radius: 24px;
@@ -52,7 +52,7 @@
 @media (max-width: 768px) {
   .weather-card {
     padding: 24px;
-    background-image: url('/src/assets/images/bg-today-small.svg');
+    background-image: url('/assets/images/bg-today-small.svg');
   }
   .temperature {
     font-size: 72px;

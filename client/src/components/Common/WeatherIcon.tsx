@@ -32,7 +32,7 @@ const WeatherIcon: React.FC<WeatherIconProps> = ({ code, className, isLarge }) =
   
   return (
     <img 
-      src={`/src/assets/images/${iconFileName}`} 
+      src={`/assets/images/${iconFileName}`} 
       alt={info.label} 
       className={className}
       width={isLarge ? 120 : 40}

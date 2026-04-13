@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Header.css';
-import logo from '../../assets/images/logo.svg';
+const logo = '/assets/images/logo.svg';
 
 interface UnitOption {
   id: string;
@@ -31,9 +31,9 @@ const Header: React.FC<HeaderProps> = ({
       </div>
       <div className="units-selector">
         <button className={`units-btn ${isOpen ? 'active' : ''}`} onClick={() => setIsOpen(!isOpen)}>
-          <img src="/src/assets/images/icon-units.svg" alt="" />
+          <img src="/assets/images/icon-units.svg" alt="" />
           <span>Units</span>
-          <img src="/src/assets/images/icon-dropdown.svg" alt="" className={`chevron ${isOpen ? 'rotated' : ''}`} />
+          <img src="/assets/images/icon-dropdown.svg" alt="" className={`chevron ${isOpen ? 'rotated' : ''}`} />
         </button>
 
         {isOpen && (
