@@ -17,8 +17,8 @@ const WeatherCard: React.FC<WeatherCardProps> = ({ location, temperature = 0, la
     year: 'numeric'
   });
 
-  // Dynamically import the icon based on the label/icon name from server
-  const iconUrl = `/assets/images/icon-${icon}.webp`;
+  // Use standard Vite pattern for dynamic assets
+  const iconUrl = new URL(`../../assets/images/icon-${icon}.webp`, import.meta.url).href;
 
   return (
     <div className="weather-card">
