@@ -75,9 +75,6 @@ function App() {
     setLocation(loc)
   }
 
-  const toggleUnits = () => {
-    setUnits(prev => prev === 'metric' ? 'imperial' : 'metric')
-  }
 
   return (
     <div className="app-container">
