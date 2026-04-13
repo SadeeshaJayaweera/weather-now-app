@@ -1,0 +1,61 @@
+.daily-forecast-section {
+  margin-top: 32px;
+}
+
+.daily-forecast-section h3 {
+  margin-bottom: 20px;
+  color: var(--neutral-300);
+  font-size: 20px;
+}
+
+.daily-forecast-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 12px;
+}
+
+.day-card {
+  background: var(--neutral-800);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  transition: background 0.2s;
+}
+
+.day-card:hover {
+  background: var(--neutral-700);
+}
+
+.day-name {
+  font-weight: 600;
+  color: var(--neutral-200);
+}
+
+.forecast-icon {
+  width: 56px;
+  height: 56px;
+}
+
+.day-temps {
+  display: flex;
+  gap: 12px;
+  font-weight: 600;
+}
+
+.low {
+  color: var(--neutral-300);
+}
+
+@media (max-width: 768px) {
+  .daily-forecast-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (max-width: 500px) {
+  .daily-forecast-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
