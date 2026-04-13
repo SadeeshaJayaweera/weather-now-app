@@ -13,13 +13,15 @@ const Search: React.FC<SearchProps> = ({ onSearch, onLocationSelect }) => {
   const [suggestions, setSuggestions] = useState<any[]>([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
 
+  const API_BASE = import.meta.env.VITE_API_BASE_URL || '';
+
   const handleInputChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const val = e.target.value;
     setQuery(val);
     
     if (val.length > 2) {
       try {
-        const res = await axios.get('/api/search', { params: { q: val } });
+        const res = await axios.get(`${API_BASE}/api/search`, { params: { q: val } });
         setSuggestions(res.data);
         setShowSuggestions(true);
       } catch (err) {

@@ -23,12 +23,14 @@ function App() {
   const [windUnit, setWindUnit] = useState<'kmh' | 'mph'>('kmh')
   const [precipUnit, setPrecipUnit] = useState<'mm' | 'inch'>('mm')
 
+  const API_BASE = import.meta.env.VITE_API_BASE_URL || ''
+
   const fetchWeather = useCallback(async (lat: number, lon: number) => {
     setLoading(true)
     setError(null)
     setNoResults(false)
     try {
-      const response = await axios.get('/api/weather', {
+      const response = await axios.get(`${API_BASE}/api/weather`, {
         params: { 
           latitude: lat, 
           longitude: lon, 
@@ -53,7 +55,7 @@ function App() {
     try {
       setLoading(true)
       setNoResults(false)
-      const searchResponse = await axios.get('/api/search', { params: { q: query } })
+      const searchResponse = await axios.get(`${API_BASE}/api/search`, { params: { q: query } })
       if (searchResponse.data && searchResponse.data.length > 0) {
         const bestMatch = searchResponse.data[0]
         setLocation({
